@@ -2,6 +2,12 @@ import json
 
 
 def filter_users_by_name(name):
+    """
+        Function to filter users by name from the input. It opens JSON file and compares
+        if there is a match in JSON file name with input name. Finally, it prints the
+        found dictionary.
+    """
+    
     with open("users.json", "r") as file:
         users = json.load(file)
     
@@ -12,6 +18,12 @@ def filter_users_by_name(name):
         
         
 def filter_by_age(age):
+    """
+        Function to filter users by age from the input. It opens JSON file and compares
+        if there is a match in JSON file age with input age. Finally, it prints the
+        found dictionary.
+    """
+    
     with open("users.json", "r") as file:
         users = json.load(file)
     
@@ -22,6 +34,12 @@ def filter_by_age(age):
 
 
 def filter_by_email(email):
+    """
+        Function to filter users by email from the input. It opens JSON file and compares
+        if there is a match in JSON file email with input email. Finally, it prints the
+        found dictionary.
+    """
+    
     with open("users.json", "r") as file:
         users = json.load(file)
     
@@ -31,7 +49,13 @@ def filter_by_email(email):
         print(user)
 
 
-if __name__ == "__main__":
+def main():
+    """
+        Function selects the next funktion to run by asking user for desired way of filtering.
+        After that it asks for the search term to filter with. Finally, it gives the search term
+        to the corresponding function.
+    """
+    
     filter_option = input("What would you like to filter by? "
                           "(Currently, only 'name' or 'age' or 'email' is supported): ").strip().lower()
     
@@ -46,3 +70,7 @@ if __name__ == "__main__":
         filter_by_email(email_to_search)
     else:
         print("Filtering by that option is not yet supported.")
+        
+if __name__ == "__main__":
+    main()
+    
